@@ -1,17 +1,31 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { FiGithub, FiLinkedin, FiMail, FiPhone, FiArrowDown } from 'react-icons/fi'
-import { Link } from 'react-router-dom'
-import { profile } from '../../data/profile.js'
-import PipelineFlow from '../shared/PipelineFlow.jsx'
+import {
+  FiArrowRight,
+  FiDownload,
+  FiGithub,
+  FiLinkedin,
+  FiMail
+} from 'react-icons/fi'
 
-function useTypingEffect(words, { typeSpeed = 65, deleteSpeed = 35, pause = 1400 } = {}) {
+import { profile } from '../../data/profile'
+import PipelineFlow from '../shared/PipelineFlow'
+
+function useTypingEffect(
+  words,
+  {
+    typeSpeed = 60,
+    deleteSpeed = 35,
+    pause = 1800
+  } = {}
+) {
   const [wordIndex, setWordIndex] = useState(0)
   const [text, setText] = useState('')
   const [deleting, setDeleting] = useState(false)
 
   useEffect(() => {
     const current = words[wordIndex % words.length]
+
     let timeout
 
     if (!deleting && text === current) {
@@ -21,105 +35,304 @@ function useTypingEffect(words, { typeSpeed = 65, deleteSpeed = 35, pause = 1400
       setWordIndex((i) => i + 1)
     } else {
       timeout = setTimeout(() => {
-        setText((t) => (deleting ? current.slice(0, t.length - 1) : current.slice(0, t.length + 1)))
+        setText((value) =>
+          deleting
+            ? current.slice(0, value.length - 1)
+            : current.slice(0, value.length + 1)
+        )
       }, deleting ? deleteSpeed : typeSpeed)
     }
 
     return () => clearTimeout(timeout)
-  }, [text, deleting, wordIndex, words, typeSpeed, deleteSpeed, pause])
+
+  }, [
+    text,
+    deleting,
+    wordIndex,
+    words,
+    typeSpeed,
+    deleteSpeed,
+    pause
+  ])
 
   return text
 }
 
 export default function Hero() {
+
   const typed = useTypingEffect(profile.roles)
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden">
-      {/* Ambient background */}
+        <section
+      id="home"
+      className="relative overflow-hidden pt-32 pb-24 min-h-screen flex items-center"
+    >
+
+      {/* Background Glow */}
+
       <div className="absolute inset-0 -z-10">
-        <div className="absolute -top-40 left-1/2 -translate-x-1/2 h-[560px] w-[560px] rounded-full bg-accent-blue/10 blur-[120px]" />
-        <div className="absolute top-1/3 right-0 h-[400px] w-[400px] rounded-full bg-accent-cyan/10 blur-[120px]" />
+
+        <div className="absolute left-1/2 top-0 h-[650px] w-[650px] -translate-x-1/2 rounded-full bg-accent-blue/10 blur-[150px]" />
+
+        <div className="absolute -right-32 top-40 h-[420px] w-[420px] rounded-full bg-accent-cyan/10 blur-[120px]" />
+
+        <div className="absolute -left-20 bottom-0 h-[300px] w-[300px] rounded-full bg-accent-indigo/10 blur-[120px]" />
+
       </div>
 
-      <div className="section grid lg:grid-cols-[1.15fr,0.85fr] gap-14 items-center py-0">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: 'easeOut' }}
-        >
-          <p className="section-eyebrow">Data Engineer · Data Analyst · Karachi, Pakistan</p>
+      <div className="section py-0">
 
-          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold leading-[1.08] text-ink-100">
-            Hi, I'm {profile.name.split(' ')[0]} {profile.name.split(' ')[1]}
-          </h1>
+        <div className="grid items-center gap-20 lg:grid-cols-[1.1fr,.9fr]">
 
-          <div className="mt-3 h-10 sm:h-12">
-            <span className="font-display text-2xl sm:text-3xl gradient-text">{typed}</span>
-            <span className="inline-block w-[2px] h-6 sm:h-8 bg-accent-cyan align-middle ml-1 animate-pulse" />
-          </div>
+          {/* Left Side */}
 
-          <p className="mt-6 max-w-xl text-ink-300 leading-relaxed">{profile.tagline}</p>
+          <motion.div
 
-          <div className="mt-9 flex flex-wrap items-center gap-4">
-            <button
-              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-              className="btn-primary"
-            >
-              View Projects
-            </button>
-            <a href={profile.resumeUrl} download className="btn-secondary">
-              Download Resume
-            </a>
-            <Link to="/contact" className="btn-secondary">
-              Contact Me
-            </Link>
-          </div>
+            initial={{ opacity: 0, y: 35 }}
 
-          <div className="mt-10 flex items-center gap-5 text-ink-500">
-            <a href={profile.github} target="_blank" rel="noreferrer" aria-label="GitHub" className="hover:text-accent-cyan transition-colors text-xl">
-              <FiGithub />
-            </a>
-            <a href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="hover:text-accent-cyan transition-colors text-xl">
-              <FiLinkedin />
-            </a>
-            <a href={`mailto:${profile.email}`} aria-label="Email" className="hover:text-accent-cyan transition-colors text-xl">
-              <FiMail />
-            </a>
-            <a href={`tel:${profile.phone}`} aria-label="Phone" className="hover:text-accent-cyan transition-colors text-xl">
-              <FiPhone />
-            </a>
-          </div>
-        </motion.div>
+            animate={{ opacity: 1, y: 0 }}
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.92 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: 'easeOut', delay: 0.15 }}
-          className="relative mx-auto"
-        >
-          <div className="relative w-64 h-64 sm:w-80 sm:h-80 mx-auto animate-float">
-            <div className="absolute inset-0 rounded-full bg-pipeline-gradient opacity-30 blur-2xl" />
-            <div className="absolute inset-0 rounded-full p-[3px] bg-pipeline-gradient">
-              <div className="w-full h-full rounded-full bg-base-800 flex items-center justify-center overflow-hidden glass-card">
-                <span className="font-display text-6xl sm:text-7xl font-bold gradient-text">YU</span>
-              </div>
+            transition={{ duration: .7 }}
+
+          >
+
+            <span className="inline-flex items-center rounded-full border border-accent-cyan/20 bg-accent-cyan/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.25em] text-accent-cyan">
+
+              Available For Opportunities
+
+            </span>
+
+            <h1 className="mt-8 font-display text-5xl font-bold leading-tight text-ink-100 lg:text-7xl">
+
+              Building
+
+              <span className="gradient-text">
+
+                {" "}Reliable Data Platforms
+
+              </span>
+
+              <br />
+
+              That Scale.
+
+            </h1>
+
+            <div className="mt-8 flex items-center gap-3">
+
+              <span className="text-xl font-medium text-ink-300">
+
+                {typed}
+
+              </span>
+
+              <span className="h-7 w-[2px] animate-pulse bg-accent-cyan" />
+
             </div>
-          </div>
-        </motion.div>
+
+            <p className="mt-8 max-w-2xl text-lg leading-9 text-ink-300">
+
+              {profile.tagline}
+
+            </p>
+
+            <div className="mt-10 flex flex-wrap gap-4">
+
+              <a
+
+                href="#projects"
+
+                className="btn-primary"
+
+              >
+
+                View Projects
+
+                <FiArrowRight />
+
+              </a>
+
+              <a
+
+                href={profile.resumeUrl}
+
+                download
+
+                className="btn-secondary"
+
+              >
+
+                <FiDownload />
+
+                Download Resume
+
+              </a>
+
+            </div>
+
+            <div className="mt-10 flex items-center gap-6">
+                            <a
+                href={profile.github}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="GitHub"
+                className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 text-xl text-ink-300 transition-all duration-300 hover:-translate-y-1 hover:border-accent-cyan hover:text-accent-cyan"
+              >
+                <FiGithub />
+              </a>
+
+              <a
+                href={profile.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="LinkedIn"
+                className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 text-xl text-ink-300 transition-all duration-300 hover:-translate-y-1 hover:border-accent-cyan hover:text-accent-cyan"
+              >
+                <FiLinkedin />
+              </a>
+
+              <a
+                href={`mailto:${profile.email}`}
+                aria-label="Email"
+                className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 text-xl text-ink-300 transition-all duration-300 hover:-translate-y-1 hover:border-accent-cyan hover:text-accent-cyan"
+              >
+                <FiMail />
+              </a>
+
+            </div>
+
+            <div className="mt-14 grid grid-cols-3 gap-6">
+
+              <div className="glass-card p-5">
+
+                <h3 className="font-display text-3xl font-bold gradient-text">
+
+                  9+
+
+                </h3>
+
+                <p className="mt-2 text-sm leading-6 text-ink-400">
+
+                  Production Projects
+
+                </p>
+
+              </div>
+
+              <div className="glass-card p-5">
+
+                <h3 className="font-display text-3xl font-bold gradient-text">
+
+                  6+
+
+                </h3>
+
+                <p className="mt-2 text-sm leading-6 text-ink-400">
+
+                  Months Experience
+
+                </p>
+
+              </div>
+
+              <div className="glass-card p-5">
+
+                <h3 className="font-display text-3xl font-bold gradient-text">
+
+                  12+
+
+                </h3>
+
+                <p className="mt-2 text-sm leading-6 text-ink-400">
+
+                  Technologies
+
+                </p>
+
+              </div>
+
+            </div>
+
+          </motion.div>
+                    {/* Right Side */}
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.92 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative mx-auto w-full max-w-lg"
+          >
+
+            {/* Background Glow */}
+
+            <div className="absolute inset-0 rounded-full bg-pipeline-gradient opacity-20 blur-3xl" />
+
+            {/* Main Card */}
+
+            <div className="relative glass-card overflow-hidden rounded-[32px] p-8">
+<img
+  src={profile.image}
+  alt={profile.name}
+  className="mx-auto aspect-square w-full max-w-sm rounded-3xl object-cover"
+/>
+
+              <div className="mt-8 space-y-4">
+
+                <div className="flex items-center justify-between">
+
+                  <span className="text-sm text-ink-500">
+                    Name
+                  </span>
+
+                  <span className="font-semibold text-ink-100">
+                    {profile.name}
+                  </span>
+
+                </div>
+
+                <div className="flex items-center justify-between">
+
+                  <span className="text-sm text-ink-500">
+                    Location
+                  </span>
+
+                  <span className="font-semibold text-ink-100">
+                    {profile.location}
+                  </span>
+
+                </div>
+
+                <div className="flex items-center justify-between">
+
+                  <span className="text-sm text-ink-500">
+                    Specialization
+                  </span>
+
+                  <span className="font-semibold text-accent-cyan">
+                    Data Engineering
+                  </span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </motion.div>
+
+        </div>
+
       </div>
 
-      <div className="section pt-4 pb-0">
-        <PipelineFlow className="w-full h-auto opacity-70" />
+      <div className="section pt-10 pb-0">
+
+        <PipelineFlow className="opacity-70" />
+
       </div>
 
-      <button
-        onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 text-ink-500 hover:text-accent-cyan animate-bounce"
-        aria-label="Scroll to About"
-      >
-        <FiArrowDown size={22} />
-      </button>
     </section>
+
   )
+
 }
+          

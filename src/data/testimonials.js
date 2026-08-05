@@ -1,12 +1,36 @@
-// Placeholder testimonials — replace with real Upwork / client reviews as they come in.
-// Each entry supports a country and star rating for future Upwork-style display.
+import upworkReview from '../assets/testimonials/upwork-review.png'
+
 export const testimonials = [
+
   {
-    id: 'placeholder-1',
-    name: 'Client testimonials coming soon',
-    country: '',
+
+    id: 1,
+
+    name: 'Verified Upwork Client',
+
+    company: 'Upwork',
+
+    image: upworkReview,
+
     rating: 5,
-    text: 'This section is wired up and ready — real client and Upwork reviews will appear here as projects are completed.',
-    isPlaceholder: true,
-  },
+
+    project: 'Power BI Sales Performance Dashboard',
+
+    review:
+      'Yousaf delivered an excellent Power BI dashboard with strong attention to detail and clear communication throughout the project. He understood the requirements quickly, delivered everything on time, and produced a professional dashboard that exceeded expectations. I would happily work with him again.',
+
+    technologies: [
+
+      'Power BI',
+
+      'Power Query',
+
+      'DAX',
+
+      'Data Visualization'
+
+    ]
+
+  }
+
 ]

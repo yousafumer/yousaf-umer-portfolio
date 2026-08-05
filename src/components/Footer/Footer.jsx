@@ -1,64 +1,176 @@
-import { FiGithub, FiLinkedin, FiMail, FiArrowUp } from 'react-icons/fi'
-import { profile } from '../../data/profile.js'
+import {
+  FiGithub,
+  FiLinkedin,
+  FiExternalLink,
+  FiMail,
+  FiArrowUp
+} from 'react-icons/fi'
 
-const QUICK_LINKS = ['about', 'skills', 'projects', 'experience', 'contact']
+import { profile } from '../../data/profile'
 
 export default function Footer() {
+
   const year = new Date().getFullYear()
 
   return (
-    <footer className="relative z-10 border-t border-white/[0.06] bg-base-950/60">
-      <div className="section !py-12 grid md:grid-cols-3 gap-10">
-        <div>
-          <p className="font-display text-lg font-semibold text-ink-100">
-            Yousaf<span className="gradient-text">.dev</span>
-          </p>
-          <p className="mt-3 text-sm text-ink-500 max-w-xs leading-relaxed">{profile.tagline}</p>
-        </div>
 
-        <div>
-          <p className="text-xs font-mono uppercase tracking-wide text-ink-500 mb-4">Quick Links</p>
-          <ul className="space-y-2">
-            {QUICK_LINKS.map((id) => (
-              <li key={id}>
-                <button
-                  onClick={() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })}
-                  className="text-sm text-ink-300 hover:text-accent-cyan transition-colors capitalize"
-                >
-                  {id}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
+    <footer className="border-t border-white/10">
 
-        <div>
-          <p className="text-xs font-mono uppercase tracking-wide text-ink-500 mb-4">Connect</p>
-          <div className="flex items-center gap-4 text-ink-300">
-            <a href={profile.github} target="_blank" rel="noreferrer" className="hover:text-accent-cyan transition-colors text-lg" aria-label="GitHub">
-              <FiGithub />
-            </a>
-            <a href={profile.linkedin} target="_blank" rel="noreferrer" className="hover:text-accent-cyan transition-colors text-lg" aria-label="LinkedIn">
-              <FiLinkedin />
-            </a>
-            <a href={`mailto:${profile.email}`} className="hover:text-accent-cyan transition-colors text-lg" aria-label="Email">
-              <FiMail />
-            </a>
+      <div className="section py-16">
+
+        <div className="grid gap-12 lg:grid-cols-[1.2fr,.8fr]">
+
+          <div>
+
+            <span className="section-eyebrow">
+
+              Thank You
+
+            </span>
+
+            <h2 className="mt-4 font-display text-4xl font-bold text-ink-100">
+
+              Thanks for visiting my portfolio.
+
+            </h2>
+
+            <p className="mt-6 max-w-2xl text-lg leading-9 text-ink-300">
+
+              I enjoy building modern data platforms, designing scalable ETL
+              pipelines, developing SQL data warehouses and creating
+              decision-ready analytics. If my work aligns with your team's
+              goals, I'd be happy to connect.
+
+            </p>
+
           </div>
+
+          <div className="glass-card p-8">
+
+            <h3 className="font-display text-2xl font-semibold text-ink-100">
+
+              Quick Links
+
+            </h3>
+
+            <div className="mt-8 space-y-4">
+                            <a
+                href="#home"
+                className="block text-ink-300 transition hover:text-accent-cyan"
+              >
+                Home
+              </a>
+
+              <a
+                href="#about"
+                className="block text-ink-300 transition hover:text-accent-cyan"
+              >
+                About
+              </a>
+
+              <a
+                href="#projects"
+                className="block text-ink-300 transition hover:text-accent-cyan"
+              >
+                Projects
+              </a>
+
+              <a
+                href="#skills"
+                className="block text-ink-300 transition hover:text-accent-cyan"
+              >
+                Skills
+              </a>
+
+              <a
+                href="#contact"
+                className="block text-ink-300 transition hover:text-accent-cyan"
+              >
+                Contact
+              </a>
+
+            </div>
+
+            <div className="mt-10 flex flex-wrap gap-4">
+
+              <a
+                href={profile.github}
+                target="_blank"
+                rel="noreferrer"
+                className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 transition hover:border-accent-cyan hover:text-accent-cyan"
+              >
+
+                <FiGithub size={20} />
+
+              </a>
+
+              <a
+                href={profile.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 transition hover:border-accent-cyan hover:text-accent-cyan"
+              >
+
+                <FiLinkedin size={20} />
+
+              </a>
+
+              <a
+                href={profile.upwork}
+                target="_blank"
+                rel="noreferrer"
+                className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 transition hover:border-accent-cyan hover:text-accent-cyan"
+              >
+
+                <FiExternalLink size={20} />
+
+              </a>
+
+              <a
+                href={`mailto:${profile.email}`}
+                className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 transition hover:border-accent-cyan hover:text-accent-cyan"
+              >
+
+                <FiMail size={20} />
+
+              </a>
+
+            </div>
+
+          </div>
+
         </div>
+                <div className="mt-16 flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-8 lg:flex-row">
+
+          <p className="text-center text-sm leading-7 text-ink-500 lg:text-left">
+
+            © {year} {profile.name}. All rights reserved.
+            <br />
+            Designed & Developed with ❤️ using React, Vite and Tailwind CSS.
+
+          </p>
+
+          <a
+
+            href="#home"
+
+            className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 transition-all duration-300 hover:-translate-y-1 hover:border-accent-cyan hover:bg-accent-cyan hover:text-base-950"
+
+            aria-label="Back to Top"
+
+          >
+
+            <FiArrowUp size={20} />
+
+          </a>
+
+        </div>
+
       </div>
 
-      <div className="border-t border-white/[0.06]">
-        <div className="section !py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-ink-700">© {year} {profile.name}. All rights reserved.</p>
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="flex items-center gap-2 text-xs text-ink-500 hover:text-accent-cyan transition-colors"
-          >
-            Back to top <FiArrowUp />
-          </button>
-        </div>
-      </div>
     </footer>
+
   )
+
 }
+            

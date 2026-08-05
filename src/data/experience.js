@@ -1,39 +1,55 @@
-// Timeline data — supports jobs, internships, and freelance entries. Add a new
-// object with a "type" to extend the timeline without touching the component.
 export const experience = [
+
   {
-    id: 'darul-sehat',
-    type: 'job',
+
+    company: 'Darul Sehat Hospital',
+
     role: 'Data Analyst',
-    org: 'Darul Sehat Hospital, Karachi',
-    period: 'Jan 2026 — Jun 2026',
-    points: [
-      'Cleaned and transformed hospital operational datasets for reporting and analysis.',
-      'Developed KPI dashboards using Excel and Power BI.',
-      'Prepared reports to support quality and operational decision-making.',
-      'Validated data accuracy and maintained reporting consistency.',
+
+    duration: 'Jan 2025 – Present',
+
+    location: 'Karachi, Pakistan',
+
+    description:
+
+      'Worked with operational hospital data to improve reporting accuracy, streamline data validation processes and support business decision-making through structured analysis and dashboard preparation.',
+
+    highlights: [
+
+      'Collected, cleaned and validated large operational datasets from multiple business departments.',
+
+      'Prepared structured Excel reports for daily and monthly operational monitoring.',
+
+      'Designed interactive Power BI dashboards to visualize KPIs and business performance.',
+
+      'Performed SQL-based data analysis to identify inconsistencies and improve reporting accuracy.',
+
+      'Collaborated with cross-functional teams to ensure reliable and accurate business reporting.'
+
     ],
-  },
-  {
-    id: 'selenium-freelance',
-    type: 'freelance',
-    role: 'Automation Assistant — Selenium IDE Project',
-    org: 'Remote',
-    period: '2025',
-    points: [
-      'Helped with a small client project using Selenium IDE for basic web automation.',
-      'Recorded actions and created simple scraping flows under guidance.',
-      'Focused on selecting elements, testing flows, and handling repeated steps.',
+
+    skills: [
+
+      'SQL',
+
+      'Excel',
+
+      'Power BI',
+
+      'Data Cleaning',
+
+      'Data Validation',
+
+      'Reporting',
+
+      'Business Analysis'
+
     ],
-  },
-  {
-    id: 'education',
-    type: 'education',
-    role: 'BS Computer Science',
-    org: 'Benazir Bhutto Shaheed University, Lyari',
-    period: '2022 — 2026',
-    points: [
-      'Relevant coursework: Data Mining, SQL, Machine Learning, Python Programming, Databases, Power BI.',
-    ],
-  },
+
+    impact:
+
+      'Improved reporting consistency by transforming raw operational datasets into structured business reports that supported faster and more reliable management decisions.'
+
+  }
+
 ]

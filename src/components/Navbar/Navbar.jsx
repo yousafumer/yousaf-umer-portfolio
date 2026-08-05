@@ -52,7 +52,7 @@ export default function Navbar() {
           onClick={() => goToSection('home')}
           className="font-display text-lg font-semibold tracking-tight text-ink-100"
         >
-          Yousaf<span className="gradient-text">.dev</span>
+          YU<span className="gradient-text">.Data</span>
         </button>
 
         <ul className="hidden lg:flex items-center gap-1">

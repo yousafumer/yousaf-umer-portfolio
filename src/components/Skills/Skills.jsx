@@ -1,56 +1,255 @@
 import { motion } from 'framer-motion'
-import { skillCategories } from '../../data/skills.js'
-import SectionHeading from '../shared/SectionHeading.jsx'
+import { skills } from '../../data/skills'
+import SectionHeading from '../shared/SectionHeading'
 
 export default function Skills() {
+
   return (
-    <section id="skills" className="section">
+
+    <section
+      id="skills"
+      className="section"
+    >
+
       <SectionHeading
-        eyebrow="Skills"
-        title="Tools I use to move data from raw to reliable"
-        subtitle="Organized by where each tool sits in the pipeline — from extraction and modeling to reporting."
+
+        eyebrow="Technical Skills"
+
+        title="Technologies I Use to Build Data Solutions"
+
+        subtitle="My toolkit spans the complete modern data stack—from data extraction and engineering to warehousing, analytics and visualization."
+
       />
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        {skillCategories.map((cat, ci) => (
+      <div className="mt-16 space-y-12">
+
+        {skills.map((category, categoryIndex) => (
+
           <motion.div
-            key={cat.id}
-            initial={{ opacity: 0, y: 24 }}
+
+            key={category.title}
+
+            initial={{ opacity: 0, y: 30 }}
+
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.5, delay: ci * 0.06 }}
-            className="glass-card-hover p-6"
+
+            viewport={{ once: true }}
+
+            transition={{ delay: categoryIndex * 0.12 }}
+
           >
-            <h3 className="font-display text-sm font-semibold uppercase tracking-wider text-accent-cyan mb-5">
-              {cat.title}
-            </h3>
-            <ul className="space-y-4">
-              {cat.skills.map((skill) => {
-                const Icon = skill.icon
-                return (
-                  <li key={skill.name} className="group">
-                    <div className="flex items-center gap-3 mb-1.5">
-                      <span className="text-lg text-ink-300 group-hover:text-accent-blue transition-colors">
-                        <Icon />
-                      </span>
-                      <span className="text-sm text-ink-100">{skill.name}</span>
+
+            <div className="mb-8 flex items-center gap-4">
+
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-pipeline-gradient text-base-950">
+
+                <category.icon size={28} />
+
+              </div>
+
+              <div>
+
+                <h2 className="font-display text-3xl font-bold text-ink-100">
+
+                  {category.title}
+
+                </h2>
+
+                <p className="mt-2 text-ink-400">
+
+                  {category.description}
+
+                </p>
+
+              </div>
+
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+                            {category.skills.map((skill, skillIndex) => (
+
+                <motion.div
+
+                  key={skill.name}
+
+                  initial={{ opacity: 0, y: 20 }}
+
+                  whileInView={{ opacity: 1, y: 0 }}
+
+                  viewport={{ once: true }}
+
+                  transition={{
+                    delay: skillIndex * 0.05
+                  }}
+
+                  whileHover={{
+                    y: -8
+                  }}
+
+                  className="group glass-card-hover p-6"
+
+                >
+
+                  <div className="mb-5 flex items-center justify-between">
+
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/5 text-accent-cyan transition-all duration-300 group-hover:bg-pipeline-gradient group-hover:text-base-950">
+
+                      <skill.icon size={28} />
+
                     </div>
-                    <div className="h-1.5 w-full rounded-full bg-white/[0.06] overflow-hidden">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8, ease: 'easeOut' }}
-                        className="h-full rounded-full bg-pipeline-gradient"
-                      />
-                    </div>
-                  </li>
-                )
-              })}
-            </ul>
+
+                    <span className="rounded-full border border-accent-cyan/20 bg-accent-cyan/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-accent-cyan">
+
+                      {skill.level}
+
+                    </span>
+
+                  </div>
+
+                  <h3 className="font-display text-xl font-semibold text-ink-100">
+
+                    {skill.name}
+
+                  </h3>
+
+                  <p className="mt-3 leading-7 text-ink-400">
+
+                    {skill.description}
+
+                  </p>
+
+                </motion.div>
+
+              ))}
+
+            </div>
+
           </motion.div>
+
         ))}
-      </div>
+              </div>
+
+      <motion.div
+
+        initial={{ opacity: 0, y: 30 }}
+
+        whileInView={{ opacity: 1, y: 0 }}
+
+        viewport={{ once: true }}
+
+        transition={{ duration: 0.7 }}
+
+        className="mt-20"
+
+      >
+
+        <div className="glass-card overflow-hidden">
+
+          <div className="grid gap-10 p-10 lg:grid-cols-2 lg:items-center">
+
+            <div>
+
+              <span className="section-eyebrow">
+
+                Always Learning
+
+              </span>
+
+              <h2 className="mt-4 font-display text-4xl font-bold leading-tight text-ink-100">
+
+                Technology evolves fast.
+
+                <br />
+
+                So do I.
+
+              </h2>
+
+              <p className="mt-6 text-lg leading-9 text-ink-300">
+
+                I continuously invest my time in learning modern Data Engineering technologies including Microsoft Fabric, Apache Spark, Snowflake, cloud data platforms, workflow orchestration and scalable ETL architecture to stay aligned with current industry practices.
+
+              </p>
+
+            </div>
+
+            <div className="grid grid-cols-2 gap-5">
+
+              <div className="glass-card p-6 text-center">
+
+                <h3 className="font-display text-4xl font-bold gradient-text">
+
+                  12+
+
+                </h3>
+
+                <p className="mt-3 text-sm text-ink-400">
+
+                  Core Technologies
+
+                </p>
+
+              </div>
+
+              <div className="glass-card p-6 text-center">
+
+                <h3 className="font-display text-4xl font-bold gradient-text">
+
+                  9+
+
+                </h3>
+
+                <p className="mt-3 text-sm text-ink-400">
+
+                  Portfolio Projects
+
+                </p>
+
+              </div>
+
+              <div className="glass-card p-6 text-center">
+
+                <h3 className="font-display text-4xl font-bold gradient-text">
+
+                  6+
+
+                </h3>
+
+                <p className="mt-3 text-sm text-ink-400">
+
+                  Months Experience
+
+                </p>
+
+              </div>
+
+              <div className="glass-card p-6 text-center">
+
+                <h3 className="font-display text-4xl font-bold gradient-text">
+
+                  ∞
+
+                </h3>
+
+                <p className="mt-3 text-sm text-ink-400">
+
+                  Learning Mindset
+
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </motion.div>
+
     </section>
+
   )
+
 }
+            
