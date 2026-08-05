@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  ::selection {
+    background: rgba(59, 130, 246, 0.35);
+  }
+
+  *:focus-visible {
+    outline: 2px solid #22D3EE;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #05070C;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1E273B;
+    border-radius: 8px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3B82F6;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .section {
+    @apply mx-auto max-w-6xl px-6 py-24 md:px-10;
+  }
+
+  .section-eyebrow {
+    @apply font-mono text-xs uppercase tracking-[0.3em] text-accent-cyan mb-3;
+  }
+
+  .section-title {
+    @apply font-display text-3xl md:text-4xl font-semibold text-ink-100 mb-4;
+  }
+
+  .glass-card {
+    @apply bg-white/[0.03] border border-white/[0.08] backdrop-blur-xl rounded-2xl shadow-glass;
+  }
+
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300 hover:border-accent-blue/40 hover:shadow-glow hover:-translate-y-1;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-full bg-pipeline-gradient px-6 py-3 text-sm font-semibold text-base-950 shadow-glow transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.02] px-6 py-3 text-sm font-semibold text-ink-100 transition-colors duration-200 hover:border-accent-cyan/50 hover:text-accent-cyan;
+  }
+
+  .pill {
+    @apply rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs font-mono text-ink-300;
+  }
+
+  .gradient-text {
+    @apply bg-pipeline-gradient bg-clip-text text-transparent;
+  }
+}
