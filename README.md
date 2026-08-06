@@ -15,6 +15,9 @@ The portfolio focuses on clean UI, smooth animations, scalable architecture, and
 👉 https://yousaf-umer-portfolio.vercel.app/
 
 ---
+<img width="424" height="326" alt="image" src="https://github.com/user-attachments/assets/527fd45d-a944-420f-bb12-375bfb846f19" />
+
+
 
 # Features
 

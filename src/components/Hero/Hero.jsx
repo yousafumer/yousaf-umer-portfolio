@@ -268,7 +268,7 @@ export default function Hero() {
 
             {/* Main Card */}
 
-           <div className="relative w-full max-w-[520px] glass-card overflow-hidden rounded-[32px] px-8 pt-4 pb-8">
+           <div className="relative w-full max-w-[460px] glass-card overflow-hidden rounded-[32px] px-8 pt-4 pb-8">
 <img
   src={profile.image}
   alt={profile.name}
