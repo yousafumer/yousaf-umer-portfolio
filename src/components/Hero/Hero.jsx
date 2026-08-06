@@ -82,7 +82,7 @@ export default function Hero() {
 
       <div className="section py-0">
 
-        <div className="grid items-center gap-20 lg:grid-cols-[1.1fr,.9fr]">
+        <div className="grid items-start gap-20 lg:grid-cols-[1.1fr,.9fr]">
 
           {/* Left Side */}
 
@@ -259,7 +259,7 @@ export default function Hero() {
   initial={{ opacity: 0, scale: 0.92 }}
   animate={{ opacity: 1, scale: 1 }}
   transition={{ duration: 0.8, delay: 0.2 }}
-  className="relative flex justify-end -mt-16"
+  className="relative flex justify-end mt-6"
 >
 
             {/* Background Glow */}
