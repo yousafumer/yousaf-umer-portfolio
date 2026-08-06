@@ -103,7 +103,7 @@ export default function Hero() {
 
             </span>
 
-            <h1 className="mt-8 font-display text-5xl font-bold leading-tight text-ink-100 lg:text-7xl">
+            <h1 className="mt-8 font-display text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight text-ink-100">
 
               Building
 
@@ -268,11 +268,23 @@ export default function Hero() {
 
             {/* Main Card */}
 
-           <div className="relative w-full max-w-[460px] glass-card overflow-hidden rounded-[32px] px-8 pt-4 pb-8">
+           <div className="relative w-full max-w-[450px] glass-card overflow-hidden rounded-[32px] p-6">
+
 <img
   src={profile.image}
   alt={profile.name}
-  className="mx-auto h-[470px] w-full rounded-3xl object-cover object-[center_top]"
+  className="
+    mx-auto
+    h-48
+    w-48
+    rounded-full
+    object-cover
+    object-top
+    border-4 border-cyan-400/30
+    lg:h-[410px]
+    lg:w-full
+    lg:rounded-3xl
+  "
 />
 
               <div className="mt-8 space-y-4">

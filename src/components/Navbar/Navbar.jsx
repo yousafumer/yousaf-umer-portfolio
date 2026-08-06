@@ -29,18 +29,22 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const goToSection = (id) => {
-    setOpen(false)
-    if (location.pathname !== '/') {
-      navigate('/')
-      setTimeout(() => {
-        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-      }, 60)
-    } else {
-      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
+const goToSection = (id) => {
+  setOpen(false)
 
+  if (location.pathname !== '/') {
+    navigate('/')
+    setTimeout(() => {
+      document.getElementById(id)?.scrollIntoView({
+        behavior: 'smooth'
+      })
+    }, 60)
+  } else {
+    document.getElementById(id)?.scrollIntoView({
+      behavior: 'smooth'
+    })
+  }
+}
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
@@ -102,20 +106,20 @@ export default function Navbar() {
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            className="lg:hidden overflow-hidden bg-base-950/95 backdrop-blur-xl border-b border-white/[0.06]"
-          >
+  initial={{ height: 0, opacity: 0 }}
+  animate={{ height: 'auto', opacity: 1 }}
+  exit={{ height: 0, opacity: 0 }}
+  className="lg:hidden overflow-hidden bg-base-950/95 backdrop-blur-xl border-b border-white/[0.06]"
+>
             <ul className="flex flex-col px-6 py-4 gap-1">
               {NAV_LINKS.map((link) => (
                 <li key={link.id}>
                   <button
-                    onClick={() => goToSection(link.id)}
-                    className="w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-ink-300 hover:bg-white/[0.05] hover:text-ink-100"
-                  >
-                    {link.label}
-                  </button>
+  onClick={() => goToSection(link.id)}
+  className="w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-ink-300 hover:bg-white/[0.05] hover:text-ink-100"
+>
+  {link.label}
+</button>
                 </li>
               ))}
             </ul>
