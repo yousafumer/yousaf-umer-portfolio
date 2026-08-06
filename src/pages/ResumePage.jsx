@@ -565,21 +565,14 @@ export default function ResumePage() {
 
             <div className="mt-10 flex flex-wrap justify-center gap-4">
 
-              <a
-
-                href={profile.resumeUrl}
-
-                download
-
-                className="btn-primary"
-
-              >
-
-                <FiDownload />
-
-                Download Resume
-
-              </a>
+             <a
+  href={profile.resumeUrl}
+  download="Yousaf_Umer_Resume.pdf"
+  className="btn-primary"
+>
+  <FiDownload />
+  Download PDF
+</a>
 
               <a
 

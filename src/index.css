@@ -51,8 +51,8 @@
 
 @layer components {
   .section {
-    @apply mx-auto max-w-6xl px-6 py-24 md:px-10;
-  }
+  @apply mx-auto max-w-6xl px-6 py-16 md:px-10;
+}
 
   .section-eyebrow {
     @apply font-mono text-xs uppercase tracking-[0.3em] text-accent-cyan mb-3;

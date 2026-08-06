@@ -22,9 +22,9 @@ export default function About() {
 
         eyebrow="About Me"
 
-        title="Engineering Data That Drives Better Decisions"
+        title="Designing Scalable Data Solutions From Raw Data to Business Intelligence"
 
-        subtitle="From collecting raw datasets to building scalable pipelines and business-ready analytics, I enjoy transforming complex data into valuable insights that organizations can confidently rely on."
+        subtitle="I specialize in building scalable ETL pipelines, SQL data warehouses, automation workflows and interactive business intelligence solutions that convert raw data into trusted, decision-ready information."
 
       />
 
@@ -52,21 +52,22 @@ export default function About() {
 
             <h2 className="mt-4 font-display text-4xl font-bold leading-tight text-ink-100">
 
-              Building reliable data systems instead of simply creating dashboards.
+              Transforming Complex Data Into Reliable Business Solutions.
 
             </h2>
 
-            <div className="mt-8 space-y-7 text-lg leading-9 text-ink-300">
+            <div className="mt-8 space-y-7 text-lg leading-9 text-ink-300 [&_strong]:text-accent-cyan [&_strong]:font-semibold">
 
               {profile.about.map((paragraph) => (
 
-                <p key={paragraph}>
+  <p
+    key={paragraph}
+    dangerouslySetInnerHTML={{ __html: paragraph }}
+  />
 
-                  {paragraph}
+))}
 
-                </p>
-
-              ))}
+              
 
             </div>
 

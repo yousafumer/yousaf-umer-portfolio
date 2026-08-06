@@ -28,9 +28,14 @@ export default function Resume() {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-3">
-          <a href={profile.resumeUrl} download className="btn-primary">
-            <FiDownload /> Download Resume
-          </a>
+          <a
+  href={profile.resumeUrl}
+  download="Yousaf_Umer_Resume.pdf"
+  className="btn-primary"
+>
+  <FiDownload />
+  Download Resume
+</a>
           <Link to="/resume" className="btn-secondary">
             Preview
           </Link>

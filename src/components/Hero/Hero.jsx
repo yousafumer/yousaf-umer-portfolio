@@ -65,7 +65,7 @@ export default function Hero() {
   return (
         <section
       id="home"
-      className="relative overflow-hidden pt-32 pb-24 min-h-screen flex items-center"
+      className="relative overflow-hidden pt-20 pb-24 min-h-[88vh] flex items-center"
     >
 
       {/* Background Glow */}
@@ -89,6 +89,7 @@ export default function Hero() {
           <motion.div
 
             initial={{ opacity: 0, y: 35 }}
+            className="w-full"
 
             animate={{ opacity: 1, y: 0 }}
 
@@ -130,11 +131,16 @@ export default function Hero() {
 
             </div>
 
-            <p className="mt-8 max-w-2xl text-lg leading-9 text-ink-300">
-
-              {profile.tagline}
-
-            </p>
+        <p className="mt-8 max-w-2xl text-lg leading-9 text-ink-300">
+  Computer Science graduate specializing in{' '}
+  <span className="font-semibold text-ink-100">Data Engineering</span>,{' '}
+  <span className="font-semibold text-ink-100">ETL Pipelines</span>,{' '}
+  <span className="font-semibold text-ink-100">SQL Data Warehousing</span>{' '}
+  and{' '}
+  <span className="font-semibold text-ink-100">Business Intelligence</span>.
+  {' '}Passionate about designing scalable data solutions that transform raw
+  data into business value.
+</p>
 
             <div className="mt-10 flex flex-wrap gap-4">
 
@@ -153,20 +159,13 @@ export default function Hero() {
               </a>
 
               <a
-
-                href={profile.resumeUrl}
-
-                download
-
-                className="btn-secondary"
-
-              >
-
-                <FiDownload />
-
-                Download Resume
-
-              </a>
+  href={profile.resumeUrl}
+  download="Yousaf_Umer_Resume.pdf"
+  className="btn-secondary"
+>
+  <FiDownload />
+  Download Resume
+</a>
 
             </div>
 
@@ -256,12 +255,12 @@ export default function Hero() {
           </motion.div>
                     {/* Right Side */}
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.92 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative mx-auto w-full max-w-lg"
-          >
+         <motion.div
+  initial={{ opacity: 0, scale: 0.92 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 0.8, delay: 0.2 }}
+  className="relative flex justify-end -mt-16"
+>
 
             {/* Background Glow */}
 
@@ -269,11 +268,11 @@ export default function Hero() {
 
             {/* Main Card */}
 
-            <div className="relative glass-card overflow-hidden rounded-[32px] p-8">
+           <div className="relative w-full max-w-[520px] glass-card overflow-hidden rounded-[32px] px-8 pt-4 pb-8">
 <img
   src={profile.image}
   alt={profile.name}
-  className="mx-auto aspect-square w-full max-w-sm rounded-3xl object-cover"
+  className="mx-auto h-[470px] w-full rounded-3xl object-cover object-[center_top]"
 />
 
               <div className="mt-8 space-y-4">
@@ -324,11 +323,9 @@ export default function Hero() {
 
       </div>
 
-      <div className="section pt-10 pb-0">
-
-        <PipelineFlow className="opacity-70" />
-
-      </div>
+     <div className="pt-4 pb-0">
+  <PipelineFlow />
+</div>
 
     </section>
 

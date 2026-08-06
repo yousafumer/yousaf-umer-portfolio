@@ -49,11 +49,17 @@ export default function Navbar() {
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 md:px-10">
         <button
-          onClick={() => goToSection('home')}
-          className="font-display text-lg font-semibold tracking-tight text-ink-100"
-        >
-          YU<span className="gradient-text">.Data</span>
-        </button>
+  onClick={() => goToSection('home')}
+  className="flex flex-col items-start leading-none"
+>
+  <span className="font-display text-lg font-bold text-ink-100">
+    Yousaf Umer
+  </span>
+
+  <span className="mt-1 text-[10px] uppercase tracking-[0.25em] text-accent-cyan">
+    Data Engineer
+  </span>
+</button>
 
         <ul className="hidden lg:flex items-center gap-1">
           {NAV_LINKS.map((link) => (

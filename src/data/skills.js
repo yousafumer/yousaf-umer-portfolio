@@ -44,6 +44,7 @@ export const skills = [
         name: 'Python',
 
         icon: SiPython,
+        color: '#3776AB',
 
         level: 'Advanced',
 
@@ -55,7 +56,7 @@ export const skills = [
       {
 
         name: 'Pandas',
-
+        color: '#150458',
         icon: SiPandas,
 
         level: 'Advanced',
@@ -68,7 +69,7 @@ export const skills = [
       {
 
         name: 'NumPy',
-
+        color: '#013243',
         icon: SiNumpy,
 
         level: 'Intermediate',
@@ -97,7 +98,7 @@ export const skills = [
     {
 
     id: 'databases',
-
+      
     title: 'Databases & Data Warehousing',
 
     description:
@@ -110,6 +111,7 @@ export const skills = [
       {
 
         name: 'SQL',
+        color: '#2563EB',
 
         icon: FaDatabase,
 
@@ -123,7 +125,7 @@ export const skills = [
       {
 
         name: 'SQL Server',
-
+        color: '#CC2927',
         icon: FaServer,
 
         level: 'Advanced',
@@ -136,7 +138,7 @@ export const skills = [
       {
 
         name: 'MySQL',
-
+        color: '#00758F',
         icon: SiMysql,
 
         level: 'Intermediate',
@@ -149,7 +151,7 @@ export const skills = [
       {
 
         name: 'Snowflake',
-
+        color: '#29B5E8',
         icon: SiSnowflake,
 
         level: 'Intermediate',
@@ -194,6 +196,7 @@ export const skills = [
         name: 'Apache Airflow',
 
         icon: SiApacheairflow,
+        color: '#017CEE',
 
         level: 'Intermediate',
 
@@ -207,7 +210,7 @@ export const skills = [
         name: 'Docker',
 
         icon: SiDocker,
-
+        color: '#2496ED',
         level: 'Intermediate',
 
         description:
@@ -247,6 +250,7 @@ export const skills = [
       {
 
         name: 'Power BI',
+        color: '#F2C811',
 
         icon: FaChartBar,
 
@@ -262,6 +266,7 @@ export const skills = [
         name: 'Microsoft Excel',
 
         icon: FaFileExcel,
+        color: '#217346',
 
         level: 'Advanced',
 
@@ -318,7 +323,7 @@ export const skills = [
         name: 'Selenium',
 
         icon: SiSelenium,
-
+        color: '#43B02A',
         level: 'Intermediate',
 
         description:
@@ -329,6 +334,7 @@ export const skills = [
       {
 
         name: 'BeautifulSoup',
+        color: '#8BC34A',
 
         icon: SiPython,
 
@@ -342,6 +348,7 @@ export const skills = [
       {
 
         name: 'Requests',
+        color: '#9CA3AF',
 
         icon: FaFileCode,
 
@@ -371,6 +378,7 @@ export const skills = [
       {
 
         name: 'Git',
+        color: '#F05032',
 
         icon: SiGit,
 
@@ -384,7 +392,7 @@ export const skills = [
       {
 
         name: 'GitHub',
-
+color: '#FFFFFF',
         icon: SiGithub,
 
         level: 'Advanced',
@@ -399,6 +407,7 @@ export const skills = [
         name: 'Jupyter Notebook',
 
         icon: SiJupyter,
+        color: '#F37626',
 
         level: 'Advanced',
 

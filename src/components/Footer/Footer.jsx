@@ -142,13 +142,12 @@ export default function Footer() {
         </div>
                 <div className="mt-16 flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-8 lg:flex-row">
 
-          <p className="text-center text-sm leading-7 text-ink-500 lg:text-left">
-
-            © {year} {profile.name}. All rights reserved.
-            <br />
-            Designed & Developed with ❤️ using React, Vite and Tailwind CSS.
-
-          </p>
+          <p className="mt-2 text-ink-500">
+  Built and maintained by{" "}
+  <span className="font-medium text-ink-300">
+    Yousaf Umer
+  </span>.
+</p>
 
           <a
 

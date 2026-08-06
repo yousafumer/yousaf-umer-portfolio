@@ -86,17 +86,29 @@ export default function Skills() {
                     y: -8
                   }}
 
-                  className="group glass-card-hover p-6"
+                  className="group glass-card-hover p-6 hover:border-accent-cyan/40"
 
                 >
 
                   <div className="mb-5 flex items-center justify-between">
 
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/5 text-accent-cyan transition-all duration-300 group-hover:bg-pipeline-gradient group-hover:text-base-950">
-
-                      <skill.icon size={28} />
-
-                    </div>
+                    <div
+  className="
+    flex h-16 w-16 items-center justify-center
+    rounded-2xl
+    bg-gradient-to-br
+    from-[#1E293B]
+    to-[#111827]
+    border border-white/10
+    shadow-lg
+    transition-all duration-300
+    group-hover:scale-110
+    group-hover:-translate-y-1
+    group-hover:shadow-[0_0_25px_rgba(34,211,238,0.25)]
+  "
+>
+  <skill.icon size={30} color={skill.color} />
+</div>
 
                     <span className="rounded-full border border-accent-cyan/20 bg-accent-cyan/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-accent-cyan">
 

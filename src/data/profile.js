@@ -17,14 +17,14 @@ export const profile = {
   github: 'https://github.com/yousafumer',
   linkedin: 'https://www.linkedin.com/in/yousaf-umer-558102214/',
   upwork: 'https://www.upwork.com/freelancers/~012ce793328966a833',
-  resumeUrl: '/resume/Yousaf-Umer-Resume.pdf',
+  resumeUrl: "/resume.pdf",
   about: [
-  "I'm a Computer Science graduate passionate about building scalable data solutions that help businesses make faster and smarter decisions.",
+  "I'm a <span class='font-semibold text-accent-cyan'>Computer Science graduate</span> specializing in <span class='font-semibold text-accent-cyan'>Data Engineering</span>, <span class='font-semibold text-accent-cyan'>ETL Pipeline Development</span>, <span class='font-semibold text-accent-cyan'>SQL Data Warehousing</span>, and <span class='font-semibold text-accent-cyan'>Business Intelligence</span>, with a passion for building scalable data solutions that transform raw information into trusted business assets.",
 
-  "My experience spans SQL data warehousing, Apache Airflow ETL pipelines, web scraping automation, Power BI analytics, and Excel dashboards. Every project I build focuses on reliability, automation, and clean architecture rather than simply generating reports.",
+  "My technical expertise includes <span class='font-semibold text-accent-cyan'>Python</span>, <span class='font-semibold text-accent-cyan'>SQL Server</span>, <span class='font-semibold text-accent-cyan'>Apache Airflow</span>, <span class='font-semibold text-accent-cyan'>Power BI</span>, <span class='font-semibold text-accent-cyan'>Snowflake</span>, and modern data engineering practices for designing reliable, automated, and production-ready workflows.",
 
-  "I enjoy solving data engineering challenges—from collecting messy raw datasets to transforming them into structured, analysis-ready information through scalable pipelines and modern engineering practices.",
+  "Beyond dashboards, I focus on developing complete data ecosystems from <span class='font-semibold text-accent-cyan'>data extraction</span> and <span class='font-semibold text-accent-cyan'>transformation</span> to <span class='font-semibold text-accent-cyan'>orchestration</span>, <span class='font-semibold text-accent-cyan'>data warehousing</span>, and <span class='font-semibold text-accent-cyan'>reporting</span>ensuring every pipeline is maintainable, efficient, and scalable.",
 
-  "Currently, I'm expanding my expertise in Snowflake, Microsoft Fabric, Apache Spark, and cloud data engineering while seeking opportunities as a Data Engineer or Data Analyst where I can contribute, learn, and build impactful data solutions.",
+  "Currently, I'm expanding my expertise in <span class='font-semibold text-accent-cyan'>Microsoft Fabric</span>, <span class='font-semibold text-accent-cyan'>Apache Spark</span>, and <span class='font-semibold text-accent-cyan'>Cloud Data Engineering</span> while seeking opportunities to contribute to modern data platforms and continue growing as a <span class='font-semibold text-accent-cyan'>Data Engineer</span>."
 ],
 }
