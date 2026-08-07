@@ -17,7 +17,7 @@ export const profile = {
   github: 'https://github.com/yousafumer',
   linkedin: 'https://www.linkedin.com/in/yousaf-umer-558102214/',
   upwork: 'https://www.upwork.com/freelancers/~012ce793328966a833',
-  resumeUrl: "/public/Yousaf_Umer_Resume.pdf",
+  resumeUrl: "/Yousaf_Umer_Resume.pdf",
   about: [
   "I'm a <span class='font-semibold text-accent-cyan'>Computer Science graduate</span> specializing in <span class='font-semibold text-accent-cyan'>Data Engineering</span>, <span class='font-semibold text-accent-cyan'>ETL Pipeline Development</span>, <span class='font-semibold text-accent-cyan'>SQL Data Warehousing</span>, and <span class='font-semibold text-accent-cyan'>Business Intelligence</span>, with a passion for building scalable data solutions that transform raw information into trusted business assets.",
 
